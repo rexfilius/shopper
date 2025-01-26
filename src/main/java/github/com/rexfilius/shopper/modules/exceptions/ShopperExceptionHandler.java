@@ -43,4 +43,23 @@ public class ShopperExceptionHandler {
         ApiResponse apiResponse = new ApiResponse(message, false);
         return new ResponseEntity<>(apiResponse, HttpStatus.BAD_REQUEST);
     }
+
+    /*
+     * @ExceptionHandler(AppException.class)
+     *     public final ResponseEntity<Object> handleAppException(AppException ex) {
+     *         log.error("AppException => ", ex);
+     *         HashMap<String, String> response = new HashMap<>();
+     *         response.put("responseCode", ex.getResponseCode());
+     *         response.put("responseMessage", ex.getMessage());
+     *         return ResponseEntity.status(HttpStatus.OK).body(response);
+     *     }
+     *
+     *     @ExceptionHandler(MaxUploadSizeExceededException.class)
+     *     public ResponseEntity<Object> handleMaxSizeException(MaxUploadSizeExceededException exc) {
+     *         HashMap<String, String> response = new HashMap<>();
+     *         response.put("responseCode", ResponseCodes.ERROR);
+     *         response.put("responseMessage", "File too large!");
+     *         return ResponseEntity.status(HttpStatus.OK).body(response);
+     *     }
+     */
 }
